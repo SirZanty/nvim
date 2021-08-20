@@ -26,17 +26,11 @@ call plug#begin('~/.config/nvim/plugged')
   " Theme Gruvbox
   Plug 'morhetz/gruvbox'
 
-  " IndentLine
-  Plug 'Yggdroot/indentLine'
-
   " Comment code
   Plug 'tpope/vim-commentary'
 
   " Emmet
   Plug 'mattn/emmet-vim'
-
-  " Auto close (),{},[]...
-  Plug 'jiangmiao/auto-pairs'
 
   if has("nvim")
     " Icon
@@ -45,8 +39,17 @@ call plug#begin('~/.config/nvim/plugged')
     " Explorer use nvim-tree
     Plug 'kyazdani42/nvim-tree.lua'
 
-    " Buffer file tabline
+    " Buffer file line
     Plug 'romgrk/barbar.nvim'
+
+    " Line
+    Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+
+    " IndentLine
+    Plug 'lukas-reineke/indent-blankline.nvim'
+
+    " Git Signs
+    Plug 'lewis6991/gitsigns.nvim'
 
     " Find file use Telescope
     Plug 'nvim-lua/plenary.nvim'
@@ -62,5 +65,5 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-compe'
   endif
-  
+
 call plug#end()

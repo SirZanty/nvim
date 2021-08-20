@@ -9,12 +9,13 @@ set fileencodings=utf-8
 highlight clear SignColumn
 set signcolumn=yes
 
-set cursorline
+" neovim complete
+set completeopt=menuone,noselect
+
+" set cursorline
 
 " Fix backspace indent
 set backspace=indent,eol,start
-
-set completeopt=menuone,noselect
 
 set nowrap
 set shortmess+=c
@@ -26,11 +27,14 @@ set softtabstop=0
 set shiftwidth=2
 set expandtab
 set autoindent
+autocmd FileType php setl tabstop=4 shiftwidth=4
 
 set number
 set ruler
 " set t_Co=256
-set termguicolors
+if has('termguicolors')
+  set termguicolors
+endif
 
 " Enable hidden buffers
 set hidden
@@ -40,12 +44,6 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-
-"" Switching windows
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-noremap <C-h> <C-w>h
 
 " Fix :wq
 cnoreabbrev W! w!
@@ -60,23 +58,45 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 
 " Clean search (highlight)
-nnoremap <silent> <leader><space> :noh<cr>
+nnoremap <silent> <leader><cr> :noh<cr>
 
 " Vmap for maintain Visual Mode after shifting > and <
 vnoremap < <gv
 vnoremap > >gv
 
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 " Move visual block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+" Copy & Paste
+set clipboard+=unnamedplus
+
+" Save
+nnoremap <silent><c-s> :<c-u>update<cr>
+
+" Format Code
+autocmd FileType php nnoremap <leader>f :!~/Projects/tools/php-cs-fixer/vendor/bin/php-cs-fixer fix %<cr>
+nnoremap <leader>f :!prettier --write %<cr>
+
+" Auto Trim WhiteSpace
+autocmd BufWritePre *.* %s/\s\+$//e
 
 " Load plugins
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/configs.vim
 
 lua << EOF
-require "nv-treesitter"
-require "nv-colorizer"
-require "nv-lspconfig"
-require "nv-compe"
+  require "nv-tree"
+  require "nv-treesitter"
+  require "nv-colorizer"
+  require "nv-lspconfig"
+  require "nv-compe"
+  require "nv-telescope"
+  require "nv-gitsigns"
+  require "nv-galaxyline"
+  require "nv-indentline"
 EOF
