@@ -47,18 +47,19 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- vim.fn.sign_define("LspDiagnosticsSignError", {text = ""})
--- vim.fn.sign_define("LspDiagnosticsSignWarning", {text = ""})
--- vim.fn.sign_define("LspDiagnosticsSignInformation", {text = ""})
--- vim.fn.sign_define("LspDiagnosticsSignHint", {text = ""})
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 
--- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
---   vim.lsp.diagnostic.on_publish_diagnostics, {
---     underline = true,
---     virtual_text = true,
---     signs = true,
---     update_in_insert = true,
--- })
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = true,
+  severity_sort = true,
+})
 
 nvim_lsp.diagnosticls.setup{
   filetypes = { "javascriptreact", "typescriptreact" },

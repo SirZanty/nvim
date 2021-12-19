@@ -94,12 +94,19 @@ gls.left[7] = {
   GitBranch = {
     provider = 'GitBranch',
     condition = condition.check_git_workspace,
-    separator = ' ',
+    -- separator = '  ',
     highlight = {colors.fg, colors.bg}
   }
 }
 
 gls.left[8] = {
+  Space = {
+    provider = function() return ' ' end,
+    highlight = {colors.bg, colors.bg}
+  }
+}
+
+gls.left[9] = {
   DiffAdd = {
     provider = 'DiffAdd',
     condition = condition.check_git_workspace,
@@ -108,7 +115,7 @@ gls.left[8] = {
   }
 }
 
-gls.left[9] = {
+gls.left[10] = {
   DiffModified = {
     provider = 'DiffModified',
     condition = condition.check_git_workspace,
@@ -117,7 +124,7 @@ gls.left[9] = {
   }
 }
 
-gls.left[10] = {
+gls.left[11] = {
   DiffRemove = {
     provider = 'DiffRemove',
     condition = condition.check_git_workspace,
