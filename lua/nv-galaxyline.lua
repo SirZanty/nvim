@@ -5,17 +5,17 @@ local gls = gl.section
 gl.short_line_list = {'NvimTree','vim-plug', 'qf'}
 
 local colors = {
-  bg         = '#282828',
-  -- section_bg = '#504945',
-  gray       = '#a89984',
-  fg         = '#ebdbb2',
-  blue       = '#458588',
-  green      = '#98971a',
-  -- activegray = '#7c6f64',
-  orange     = '#d65d0e',
-  yellow     = '#d79921',
-  red        = '#cc241d',
-  aqua       = '#689d6a'
+  bg = '#282828',
+  red = '#cc241d';
+  green = '#98971a',
+  yellow = '#d79921',
+  blue = '#458588',
+  purple = '#b16286',
+  purple_2 = '#d3869b',
+  aqua = '#689d6a',
+  gray = '#a89984',
+  fg = '#ebdbb2',
+  orange = '#d65d0e',
 }
 gls.left[1] = {
   RainbowRed = {
@@ -28,31 +28,18 @@ gls.left[2] = {
   ViMode = {
     provider = function()
       -- auto change color according the vim mode
-      -- n = Nomal
-      -- i = Insert
-      -- v = Vitual
-      -- R = repeat
-      -- s = select
-      local mode_color = {
-        n = colors.gray,
-        i = colors.blue,
-        v=colors.orange, [''] = colors.orange, V=colors.orange,
-        c = colors.red,
-        R = colors.red,
-        -- Rv = colors.red,
-        -- no = colors.red,
-        s = colors.orange, S=colors.orange, [''] = colors.orange,
-        -- ic = colors.yellow,
-        -- cv = colors.red,ce=colors.red, r = colors.red,
-        -- rm = colors.aqua, ['r?'] = colors.aqua,
-        -- ['!']  = colors.red,t = colors.red
-      }
+      local mode_color = {n = colors.red, i = colors.green,v=colors.blue,
+                          [''] = colors.blue,V=colors.blue,
+                          c = colors.purple,no = colors.red,s = colors.orange,
+                          S=colors.orange,[''] = colors.orange,
+                          ic = colors.yellow,R = colors.purple_2,Rv = colors.purple_2,
+                          cv = colors.red,ce=colors.red, r = colors.aqua,
+                          rm = colors.aqua, ['r?'] = colors.aqua,
+                          ['!']  = colors.red,t = colors.red}
       vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim.fn.mode()])
       return '  '
     end,
-    highlight = {colors.fg,colors.bg,'bold'},
-    -- separator = "▊",
-    -- separator_highlight = {colors.section_bg, colors.section_bg}
+    highlight = {colors.red,colors.bg,'bold'},
   },
 }
 
@@ -76,9 +63,7 @@ gls.left[5] = {
   FileSize = {
     provider = 'FileSize',
     condition = condition.buffer_not_empty,
-    -- separator = " ",
-    highlight = {colors.fg,colors.bg, 'bold'},
-    -- separator_highlight = {colors.section_bg, colors.bg}
+    highlight = {colors.fg,colors.bg}
   }
 }
 
@@ -94,7 +79,6 @@ gls.left[7] = {
   GitBranch = {
     provider = 'GitBranch',
     condition = condition.check_git_workspace,
-    -- separator = '  ',
     highlight = {colors.fg, colors.bg}
   }
 }

@@ -58,7 +58,7 @@ call plug#begin('~/.config/nvim/plugged')
     " Syntax code
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-    " Color css
+    " Highline Color
     Plug 'norcalli/nvim-colorizer.lua'
 
     " Lsp

@@ -79,7 +79,6 @@ set clipboard+=unnamedplus
 nnoremap <silent><c-s> :<c-u>update<cr>
 
 " Format Code
-autocmd FileType php nnoremap <leader>f :!~/Projects/tools/php-cs-fixer/vendor/bin/php-cs-fixer fix %<cr>
 nnoremap <leader>f :!prettier --write %<cr>
 
 " Auto Trim WhiteSpace
