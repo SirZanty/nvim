@@ -63,7 +63,10 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Lsp
     Plug 'neovim/nvim-lspconfig'
-    Plug 'hrsh7th/nvim-compe'
+
+    " AutoComplete
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/nvim-cmp'
   endif
 
 call plug#end()

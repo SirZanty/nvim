@@ -35,8 +35,3 @@ nnoremap <silent>    <A-8> :BufferGoto 8<CR>
 nnoremap <silent>    <A-9> :BufferLast<CR>
 " Close buffer
 nnoremap <silent>    <A-c> :BufferClose<CR>
-
-" TODO: LSP use nvim-lspconfig
-" Config nvim-compe
-inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm('<CR>')

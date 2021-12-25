@@ -93,7 +93,7 @@ lua << EOF
   require "nv-treesitter"
   require "nv-colorizer"
   require "nv-lspconfig"
-  require "nv-compe"
+  require "nv-cmp"
   require "nv-telescope"
   require "nv-gitsigns"
   require "nv-galaxyline"
