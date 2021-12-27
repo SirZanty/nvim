@@ -32,6 +32,9 @@ call plug#begin('~/.config/nvim/plugged')
   " Emmet
   Plug 'mattn/emmet-vim'
 
+  " A Vim alignment plugin
+  Plug 'junegunn/vim-easy-align'
+
   if has("nvim")
     " Icon
     Plug 'kyazdani42/nvim-web-devicons'
@@ -67,6 +70,11 @@ call plug#begin('~/.config/nvim/plugged')
     " AutoComplete
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/nvim-cmp'
+
+    " Snippet
+    Plug 'hrsh7th/cmp-vsnip'
+    Plug 'hrsh7th/vim-vsnip'
+
   endif
 
 call plug#end()

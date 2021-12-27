@@ -76,7 +76,7 @@ vnoremap K :m '<-2<CR>gv=gv
 set clipboard+=unnamedplus
 
 " Save
-nnoremap <silent><c-s> :<c-u>update<cr>
+nnoremap <silent><c-s> :update<cr>
 
 " Format Code
 nnoremap <leader>f :!prettier --write %<cr>
