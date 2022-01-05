@@ -96,6 +96,6 @@ lua << EOF
   require "nv-cmp"
   require "nv-telescope"
   require "nv-gitsigns"
-  require "nv-galaxyline"
+  require "nv-lualine"
   require "nv-indentline"
 EOF

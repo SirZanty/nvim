@@ -46,7 +46,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'romgrk/barbar.nvim'
 
     " Line
-    Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+    Plug 'nvim-lualine/lualine.nvim'
 
     " IndentLine
     Plug 'lukas-reineke/indent-blankline.nvim'
