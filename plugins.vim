@@ -42,6 +42,9 @@ call plug#begin('~/.config/nvim/plugged')
     " Explorer use nvim-tree
     Plug 'kyazdani42/nvim-tree.lua'
 
+    " Pair
+    Plug 'windwp/nvim-autopairs'
+
     " Buffer file line
     Plug 'romgrk/barbar.nvim'
 

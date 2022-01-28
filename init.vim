@@ -98,4 +98,5 @@ lua << EOF
   require "nv-gitsigns"
   require "nv-lualine"
   require "nv-indentline"
+  require "nv-autopairs"
 EOF
