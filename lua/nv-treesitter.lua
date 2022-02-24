@@ -6,6 +6,8 @@ require'nvim-treesitter.configs'.setup {
     "javascript",
     "typescript",
     "json",
+    "c",
+    "cpp",
     "php"
   },
   highlight = {

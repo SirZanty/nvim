@@ -84,6 +84,10 @@ nnoremap <leader>f :!prettier --write %<cr>
 " Auto Trim WhiteSpace
 autocmd BufWritePre *.* %s/\s\+$//e
 
+" Compile Code c/c++
+autocmd filetype c nnoremap <F9> :w <CR> :!gcc % -o %:r && ./%:r<CR>
+autocmd filetype cpp nnoremap <F9> :w <CR>:!g++ % -o %:r && ./%:r<CR>
+
 " Load plugins
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/configs.vim
