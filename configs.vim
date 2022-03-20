@@ -45,3 +45,15 @@ imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab
 smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
 imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+
+" Floaterm
+hi! FloatermBorder guibg=NONE guifg='#d79921'
+
+let g:floaterm_width = 0.5
+let g:floaterm_height = 0.6
+let g:floaterm_position = 'topright'
+let g:floaterm_keymap_toggle = '<F12>'
+
+autocmd FileType c nnoremap <F11> :FloatermNew --autoclose=0 gcc % -o %< && ./%<<CR>
+autocmd FileType cpp nnoremap <F11> :FloatermNew --autoclose=0 g++ % -o %< && ./%<<CR>
+autocmd FileType javascript nnoremap <F11> :FloatermNew --autoclose=0 node %<CR>

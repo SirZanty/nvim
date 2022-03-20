@@ -35,6 +35,9 @@ call plug#begin('~/.config/nvim/plugged')
   " A Vim alignment plugin
   Plug 'junegunn/vim-easy-align'
 
+  " Floaterm
+  Plug 'voldikss/vim-floaterm'
+
   if has("nvim")
     " Icon
     Plug 'kyazdani42/nvim-web-devicons'
