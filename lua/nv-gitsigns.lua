@@ -1,4 +1,4 @@
 require('gitsigns').setup {
-  numhl = true,
+  numhl = false,
   current_line_blame = true
 }

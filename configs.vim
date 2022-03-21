@@ -5,8 +5,8 @@ let g:gruvbox_sign_column="bg0"
 colorscheme gruvbox
 
 " Setting Transparent Background
-hi! Normal ctermbg=NONE guibg=NONE
-hi! SignColumn ctermbg=NONE guibg=NONE
+" hi! Normal ctermbg=NONE guibg=NONE
+" hi! SignColumn ctermbg=NONE guibg=NONE
 
 " TODO: Explorer (nvim-tree)
 let g:nvim_tree_indent_markers = 1
