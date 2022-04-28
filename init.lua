@@ -35,3 +35,6 @@ require 'gitsign'
 
 -- ctrlp
 require 'ctrlp'
+
+-- term
+require 'term'
