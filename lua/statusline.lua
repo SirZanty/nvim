@@ -2,17 +2,17 @@ local lualine = require('lualine')
 
 -- Color Gruvbox
 local colors = {
-  bg      = '#282828',
-  red     = '#cc241d',
-  green   = '#98971a',
-  yellow  = '#d79921',
-  blue    = '#458588',
-  purple  = '#b16286',
-  magenta = '#d3869b',
-  aqua    = '#689d6a',
-  gray    = '#a89984',
-  fg      = '#ebdbb2',
-  orange  = '#d65d0e',
+  bg       = '#202328',
+  fg       = '#bbc2cf',
+  yellow   = '#ECBE7B',
+  cyan     = '#008080',
+  darkblue = '#081633',
+  green    = '#98be65',
+  orange   = '#FF8800',
+  violet   = '#a9a1e1',
+  magenta  = '#c678dd',
+  blue     = '#51afef',
+  red      = '#ec5f67',
 }
 
 local conditions = {
@@ -35,6 +35,7 @@ local config = {
     -- Disable sections and component separators
     component_separators = '',
     section_separators = '',
+    disabled_filetypes = { 'NvimTree', 'packer'},
     theme = {
       -- We are going to use lualine_c an lualine_x as left and
       -- right section. Both are highlighted by c theme .  So we
@@ -82,9 +83,12 @@ ins_left({
   padding = { left = 0, right = 1 }, -- We don't need space before this
 })
 
-ins_left({
+ins_left {
   -- mode component
   function()
+    return ''
+  end,
+  color = function()
     -- auto change color according to neovims mode
     local mode_color = {
       n = colors.red,
@@ -98,22 +102,20 @@ ins_left({
       S = colors.orange,
       [''] = colors.orange,
       ic = colors.yellow,
-      R = colors.purple,
-      Rv = colors.purple,
+      R = colors.violet,
+      Rv = colors.violet,
       cv = colors.red,
       ce = colors.red,
-      r = colors.aqua,
-      rm = colors.aqua,
-      ['r?'] = colors.aqua,
+      r = colors.cyan,
+      rm = colors.cyan,
+      ['r?'] = colors.cyan,
       ['!'] = colors.red,
       t = colors.red,
     }
-    vim.api.nvim_command('hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. ' guibg=' .. colors.bg)
-    return ''
+    return { fg = mode_color[vim.fn.mode()] }
   end,
-  color = 'LualineMode',
   padding = { right = 1 },
-})
+}
 
 ins_left({
   'filename',
@@ -159,7 +161,7 @@ ins_right({
   diagnostics_color = {
     color_error = { fg = colors.red },
     color_warn = { fg = colors.yellow },
-    color_info = { fg = colors.aqua },
+    color_info = { fg = colors.cyan },
   },
 })
 

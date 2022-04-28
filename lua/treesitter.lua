@@ -8,9 +8,10 @@ require'nvim-treesitter.configs'.setup {
     "json",
     "c",
     "cpp",
-    "php"
+    "php",
   },
+
   highlight = {
-    enable = true
-  }
+    enable = true,
+  },
 }
