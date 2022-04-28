@@ -3,38 +3,41 @@ require 'keybinds'
 require 'plugins'
 
 -- theme
-require 'theme'
+require 'nv-theme'
 
 -- lsp & autocomplete
-require 'autocomplete'
-require 'lsp'
+require 'nv-cmp'
+require 'nv-lsp'
 
 -- statusline
-require 'statusline'
+require 'nv-lualine'
 
 -- bufferline
-require 'bufline'
+require 'nv-bufferline'
 
 -- file explorer
-require 'explorer'
+require 'nv-tree'
 
 -- autopairs
-require 'autopairs'
+require 'nv-autopairs'
 
 -- text color
-require 'color'
+require 'nv-colorizer'
 
 -- highlighting code
-require 'treesitter'
+require 'nv-treesitter'
 
 -- indentline
-require 'indentline'
+require 'nv-indentline'
 
 -- git
-require 'gitsign'
+require 'nv-gitsigns'
 
 -- ctrlp
-require 'ctrlp'
+require 'nv-telescope'
 
 -- term
-require 'term'
+require 'nv-floaterm'
+
+-- snippet
+require 'nv-vsnip'

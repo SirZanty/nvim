@@ -4,7 +4,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
-return require('packer').startup(function(use)
+return require('packer').startup({function(use)
 
   -- theme
   use 'folke/tokyonight.nvim'
@@ -19,7 +19,10 @@ return require('packer').startup(function(use)
   use {
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
     'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-vsnip',
+    'hrsh7th/vim-vsnip',
   }
 
   -- icon
@@ -58,9 +61,20 @@ return require('packer').startup(function(use)
   -- float terminal
   use 'voldikss/vim-floaterm'
 
+  -- comment code
+  use 'tpope/vim-commentary'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
     require('packer').sync()
   end
-end)
+end,
+
+config = {
+  display = {
+    open_fn = function()
+      return require('packer.util').float({ border = 'single' })
+    end
+  }
+}})
