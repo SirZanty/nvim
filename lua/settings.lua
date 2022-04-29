@@ -4,6 +4,9 @@ vim.opt.syntax = 'on'
 -- enable mouse neovim
 vim.opt.mouse = 'a'
 
+-- time delay map key
+vim.opt.timeoutlen = 500
+
 -- enable gui color
 vim.opt.termguicolors = true
 
