@@ -7,3 +7,6 @@ vim.api.nvim_set_keymap('n', '<A-,>', ':BufferLineCyclePrev<CR>', { noremap = tr
 -- move the current buffer backwards or forwards
 vim.api.nvim_set_keymap('n', '<A->>', ':BufferLineMoveNext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<A-<>', ':BufferLineMovePrev<CR>', { noremap = true, silent = true })
+
+-- close buffer
+vim.api.nvim_set_keymap('n', '<A-c>', ':BufferLinePickClose<CR>', { noremap = true, silent = true })

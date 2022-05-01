@@ -48,6 +48,6 @@ vim.api.nvim_set_keymap('n', 'n', 'nzzzv', { noremap = true })
 vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', { noremap = true })
 
 -- Auto Trim WhiteSpace
-vim.api.nvim_exec([[
+vim.cmd[[
   autocmd BufWritePre *.* %s/\s\+$//e
-]], true)
+]]
