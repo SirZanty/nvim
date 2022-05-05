@@ -4,9 +4,6 @@ vim.api.nvim_set_keymap('n', '<Space>', '', { noremap = true })
 -- set 'Space' key as leader key
 vim.g.mapleader = ' '
 
--- keymap nohl
-vim.api.nvim_set_keymap('n', '<Leader><CR>', ':nohl<CR>', { noremap = true })
-
 -- disable arrow keys
 vim.api.nvim_set_keymap('', '<Up>', '', { noremap = true })
 vim.api.nvim_set_keymap('i', '<Up>', '', { noremap = true })
@@ -28,10 +25,6 @@ vim.api.nvim_set_keymap('n', '<A-h>', ':vertical resize -2<CR>', { noremap = tru
 vim.api.nvim_set_keymap('n', '<A-j>', ':resize +2<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<A-k>', ':resize -2<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<A-l>', ':vertical resize +2<CR>', { noremap = true })
-
--- open split window
-vim.api.nvim_set_keymap('n', '<Leader>v', ':split<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<Leader>s', ':vsplit<CR>', { noremap = true })
 
 --  move block of text
 vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true })

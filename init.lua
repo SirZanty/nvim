@@ -41,3 +41,6 @@ require 'nv-floaterm'
 
 -- snippet
 require 'nv-vsnip'
+
+-- which-key
+require 'nv-whichkey'

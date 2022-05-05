@@ -1,16 +1,21 @@
+local wk = require("which-key")
+
 require('gitsigns').setup {
   current_line_blame = true
 }
 
--- next & prev huck
-vim.api.nvim_set_keymap('n', ']c', ':Gitsigns next_hunk<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '[c', ':Gitsigns prev_hunk<CR>', { noremap = true })
-
--- git preview hunk
-vim.api.nvim_set_keymap('n', '<Leader>hp', ':Gitsigns preview_hunk<CR>', { noremap = true })
-
--- git preview diff
-vim.api.nvim_set_keymap('n', '<Leader>hd', ':Gitsigns diffthis<CR>', { noremap = true })
-
--- show info blame line
-vim.api.nvim_set_keymap('n', '<Leader>hb', ':Gitsigns blame_line<CR>', { noremap = true })
+wk.register({
+  g = {
+    name = "Gitsigns",
+    -- next hunk
+    ["]"] = {"<cmd>Gitsigns next_hunk<CR>", "Git Next Hunk"},
+    -- prev hunk
+    ["["] = {"<cmd>Gitsigns prev_hunk<CR>", "Git Prev Hunk"},
+    -- git preview hunk
+    p = {"<cmd>Gitsigns preview_hunk<CR>", "Git Preview Hunk"},
+    -- git preview diff
+    d = {"<cmd>Gitsigns diffthis<CR>", "Git Preview Diff"},
+    -- show info blame line
+    b = {"<cmd>Gitsigns blame_line<CR>", "Git Show Blame Line"},
+  },
+}, { prefix = "<leader>" })

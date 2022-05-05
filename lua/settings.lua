@@ -5,7 +5,7 @@ vim.opt.syntax = 'on'
 vim.opt.mouse = 'a'
 
 -- time delay map key
--- vim.opt.timeoutlen = 500
+vim.opt.timeoutlen = 0
 
 -- enable gui color
 vim.opt.termguicolors = true

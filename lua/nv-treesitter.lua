@@ -9,6 +9,7 @@ require'nvim-treesitter.configs'.setup {
     "c",
     "cpp",
     "php",
+    "lua",
   },
 
   highlight = {

@@ -6,8 +6,11 @@ end
 
 return require('packer').startup({function(use)
 
-  -- theme
-  use 'folke/tokyonight.nvim'
+  -- theme & which-key
+  use {
+    'folke/tokyonight.nvim',
+    'folke/which-key.nvim',
+  }
 
   -- lsp
   use {
