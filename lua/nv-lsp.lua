@@ -36,8 +36,8 @@ wk.register({
   l = {
     name = "Lsp",
     e = {"<cmd>lua vim.diagnostic.open_float()<CR>", "Diagnostic Float"},
-    ["]"] = {"<cmd>lua vim.diagnostic.goto_next()<CR>", "Diagnostic Next"},
-    ["["] = {"<cmd>lua vim.diagnostic.goto_prev()<CR>", "Diagnostic Prev"},
+    ["."] = {"<cmd>lua vim.diagnostic.goto_next()<CR>", "Diagnostic Next"},
+    [","] = {"<cmd>lua vim.diagnostic.goto_prev()<CR>", "Diagnostic Prev"},
     q = {"<cmd>lua vim.diagnostic.setloclist()<CR>", "Diagnostic List"},
     g = {
       name = "Go To",

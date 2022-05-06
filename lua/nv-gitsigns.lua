@@ -8,9 +8,9 @@ wk.register({
   g = {
     name = "Gitsigns",
     -- next hunk
-    ["]"] = {"<cmd>Gitsigns next_hunk<CR>", "Git Next Hunk"},
+    ["."] = {"<cmd>Gitsigns next_hunk<CR>", "Git Next Hunk"},
     -- prev hunk
-    ["["] = {"<cmd>Gitsigns prev_hunk<CR>", "Git Prev Hunk"},
+    [","] = {"<cmd>Gitsigns prev_hunk<CR>", "Git Prev Hunk"},
     -- git preview hunk
     p = {"<cmd>Gitsigns preview_hunk<CR>", "Git Preview Hunk"},
     -- git preview diff
