@@ -28,3 +28,6 @@ vim.opt.expandtab = true
 
 -- enable signcolumn
 vim.opt.signcolumn = 'yes'
+
+-- complete
+vim.opt.completeopt = 'menu,menuone,noselect'
