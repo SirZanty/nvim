@@ -5,14 +5,18 @@ require("bufferline").setup{}
 wk.register({
   b = {
     name = "Buffer Line",
-    ["."] = {"<cmd>BufferLineCycleNext<CR>", "Buffer Next"}, -- buffer next
-    [","] = {"<cmd>BufferLineCyclePrev<CR>", "Buffer Prev"}, -- buffer prev
-    [">"] = {"<cmd>BufferLineMoveNext<CR>", "Buffer Move Next"}, -- buffer move next
-    ["<"] = {"<cmd>BufferLineMovePrev<CR>", "Buffer Move Prev"}, -- buffer move prev
+    ["."] = {"<cmd>BufferLineCycleNext<CR>", "Next Buffer"}, -- buffer next
+    [","] = {"<cmd>BufferLineCyclePrev<CR>", "Prev Buffer"}, -- buffer prev
+    [">"] = {"<cmd>BufferLineMoveNext<CR>", "Move Next Buffer"}, -- buffer move next
+    ["<"] = {"<cmd>BufferLineMovePrev<CR>", "Move Prev Buffer"}, -- buffer move prev
     c = {
-      p = {"<cmd>BufferLinePickClose<CR>", "Buffer Pick Close"},
-      l = {"<cmd>BufferLineCloseLeft<CR>", "Buffer Close Left"},
-      r = {"<cmd>BufferLineCloseRight<CR>", "Buffer Close Right"},
+      name = "Close Buffer",
+      p = {"<cmd>BufferLinePickClose<CR>", "Pick Close Buffer"},
+      l = {"<cmd>BufferLineCloseLeft<CR>", "Close Left Buffer"},
+      r = {"<cmd>BufferLineCloseRight<CR>", "Close Right Buffer"},
     }, -- buffer close
+    g = {"<cmd>BufferLinePick<CR>", "Goto Buffer Pick"},
+    p = {"<cmd>BufferLineTogglePin<CR>", "Buffer Toggle Pin"},
+
   },
 }, { prefix = "<leader>" })

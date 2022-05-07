@@ -15,6 +15,10 @@ vim.api.nvim_set_keymap('n', '<C-s>', ':update<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'n', 'nzzzv', { noremap = true })
 vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', { noremap = true })
 
+-- Move visual block
+vim.api.nvim_set_keymap('v', 'J', ':move \'>+1<CR>gv=gv', { noremap = true })
+vim.api.nvim_set_keymap('v', 'K', ':move \'<-2<CR>gv=gv', { noremap = true })
+
 -- Auto Trim WhiteSpace
 vim.cmd[[
   autocmd BufWritePre *.* %s/\s\+$//e

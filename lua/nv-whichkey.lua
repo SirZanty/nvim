@@ -1,5 +1,5 @@
 require("which-key").setup {
-  triggers = {"<leader>"},
+  triggers = { "<leader>" },
 }
 
 local wk = require("which-key")
@@ -26,6 +26,9 @@ wk.register({
       ["3"] = {"<cmd>vertical resize +5<CR>", "Resize Horizontal +5"},
       ["4"] = {"<cmd>vertical resize -5<CR>", "Resize Horizontal -5"},
     }
+  },
+  c = {
+    name = "Commentary",
+    c = {"<cmd>Commentary<CR>", "Toggle Comment Line"},
   }
 }, { prefix = "<leader>" })
-
