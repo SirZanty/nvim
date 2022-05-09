@@ -27,8 +27,10 @@ wk.register({
       ["4"] = {"<cmd>vertical resize -5<CR>", "Resize Horizontal -5"},
     }
   },
+  --[[
   c = {
     name = "Commentary",
     c = {"<cmd>Commentary<CR>", "Toggle Comment Line"},
   }
+  --]]
 }, { prefix = "<leader>" })

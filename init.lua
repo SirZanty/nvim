@@ -30,14 +30,11 @@ require 'nv-treesitter'
 -- indentline
 require 'nv-indentline'
 
--- git
+-- gitsigns
 require 'nv-gitsigns'
 
--- ctrlp
+-- telescope
 require 'nv-telescope'
-
--- term
-require 'nv-floaterm'
 
 -- which-key
 require 'nv-whichkey'
