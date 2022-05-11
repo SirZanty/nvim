@@ -12,7 +12,7 @@ vim.opt.termguicolors = true
 
 -- show column number neovim
 vim.opt.number = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 
 -- config search
 vim.opt.hlsearch = true
