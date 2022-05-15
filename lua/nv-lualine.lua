@@ -2,6 +2,8 @@ local lualine = require('lualine')
 
 -- Color Gruvbox
 local colors = {
+  -- Tokyonight
+  --[[
   bg       = '#202328',
   fg       = '#bbc2cf',
   yellow   = '#ECBE7B',
@@ -13,6 +15,20 @@ local colors = {
   magenta  = '#c678dd',
   blue     = '#51afef',
   red      = '#ec5f67',
+  --]]
+
+  -- Gruvbox
+  bg       = '#282828',
+  fg       = '#ebdbb2',
+  yellow   = '#d79921',
+  cyan     = '#689d6a', -- aqua
+  -- darkblue = '#081633',
+  green    = '#98971a',
+  orange   = '#d65d0e',
+  violet   = '#a9a1e1', -- ?
+  magenta  = '#b16286', -- purple
+  blue     = '#458588',
+  red      = '#cc241d',
 }
 
 local conditions = {

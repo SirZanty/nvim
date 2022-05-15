@@ -10,6 +10,9 @@ vim.opt.timeoutlen = 0
 -- enable gui color
 vim.opt.termguicolors = true
 
+-- set background
+vim.opt.background = "dark"
+
 -- show column number neovim
 vim.opt.number = true
 -- vim.opt.relativenumber = true
