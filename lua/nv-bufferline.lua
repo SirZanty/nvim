@@ -1,22 +1,12 @@
-local wk = require("which-key")
-
 require("bufferline").setup{}
 
-wk.register({
-  b = {
-    name = "Buffer Line",
-    ["."] = {"<cmd>BufferLineCycleNext<CR>", "Next Buffer"}, -- buffer next
-    [","] = {"<cmd>BufferLineCyclePrev<CR>", "Prev Buffer"}, -- buffer prev
-    [">"] = {"<cmd>BufferLineMoveNext<CR>", "Move Next Buffer"}, -- buffer move next
-    ["<"] = {"<cmd>BufferLineMovePrev<CR>", "Move Prev Buffer"}, -- buffer move prev
-    c = {
-      name = "Close Buffer",
-      p = {"<cmd>BufferLinePickClose<CR>", "Pick Close Buffer"},
-      l = {"<cmd>BufferLineCloseLeft<CR>", "Close Left Buffer"},
-      r = {"<cmd>BufferLineCloseRight<CR>", "Close Right Buffer"},
-    }, -- buffer close
-    g = {"<cmd>BufferLinePick<CR>", "Goto Buffer Pick"},
-    p = {"<cmd>BufferLineTogglePin<CR>", "Buffer Toggle Pin"},
+-- buffers :bnext and :bprevious
+vim.api.nvim_set_keymap('n', '<A-.>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-,>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
 
-  },
-}, { prefix = "<leader>" })
+-- move the current buffer backwards or forwards
+vim.api.nvim_set_keymap('n', '<A->>', ':BufferLineMoveNext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-<>', ':BufferLineMovePrev<CR>', { noremap = true, silent = true })
+
+-- close buffer
+vim.api.nvim_set_keymap('n', '<A-c>', ':BufferLinePickClose<CR>', { noremap = true, silent = true })

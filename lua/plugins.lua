@@ -6,12 +6,6 @@ end
 
 return require('packer').startup({function(use)
 
-  -- which-key
-  use {
-    -- 'folke/tokyonight.nvim',
-    'folke/which-key.nvim',
-  }
-
   -- theme
   use 'morhetz/gruvbox'
 

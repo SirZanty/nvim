@@ -35,6 +35,3 @@ require 'nv-gitsigns'
 
 -- telescope
 require 'nv-telescope'
-
--- which-key
-require 'nv-whichkey'
