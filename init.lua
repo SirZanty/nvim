@@ -5,8 +5,7 @@ require 'plugins'
 -- theme
 require 'nv-theme'
 
--- lsp & autocomplete
-require 'nv-cmp'
+-- lsp
 require 'nv-lsp'
 
 -- statusline

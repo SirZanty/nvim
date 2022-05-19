@@ -1,32 +1,14 @@
 local lualine = require('lualine')
 
--- Color Gruvbox
 local colors = {
-  -- Tokyonight
-  --[[
-  bg       = '#202328',
-  fg       = '#bbc2cf',
-  yellow   = '#ECBE7B',
-  cyan     = '#008080',
-  darkblue = '#081633',
-  green    = '#98be65',
-  orange   = '#FF8800',
-  violet   = '#a9a1e1',
-  magenta  = '#c678dd',
-  blue     = '#51afef',
-  red      = '#ec5f67',
-  --]]
-
   -- Gruvbox
   bg       = '#282828',
   fg       = '#ebdbb2',
   yellow   = '#d79921',
-  cyan     = '#689d6a', -- aqua
-  -- darkblue = '#081633',
+  aqua     = '#689d6a',
   green    = '#98971a',
   orange   = '#d65d0e',
-  violet   = '#a9a1e1', -- ?
-  magenta  = '#b16286', -- purple
+  purple   = '#b16286',
   blue     = '#458588',
   red      = '#cc241d',
 }
@@ -51,13 +33,9 @@ local config = {
     -- Disable sections and component separators
     component_separators = '',
     section_separators = '',
-    disabled_filetypes = { 'NvimTree', 'packer'},
+    disabled_filetypes = { 'NvimTree' },
     theme = {
-      -- We are going to use lualine_c an lualine_x as left and
-      -- right section. Both are highlighted by c theme .  So we
-      -- are just setting default looks o statusline
       normal = { c = { fg = colors.fg, bg = colors.bg } },
-      inactive = { c = { fg = colors.fg, bg = colors.bg } },
     },
   },
   sections = {
@@ -96,47 +74,21 @@ ins_left({
     return '▊'
   end,
   color = { fg = colors.blue }, -- Sets highlighting of component
-  padding = { left = 0, right = 1 }, -- We don't need space before this
+  padding = { right = 1 }, -- We don't need space before this
 })
 
 ins_left {
-  -- mode component
   function()
     return ''
   end,
-  color = function()
-    -- auto change color according to neovims mode
-    local mode_color = {
-      n = colors.red,
-      i = colors.green,
-      v = colors.blue,
-      [''] = colors.blue,
-      V = colors.blue,
-      c = colors.magenta,
-      no = colors.red,
-      s = colors.orange,
-      S = colors.orange,
-      [''] = colors.orange,
-      ic = colors.yellow,
-      R = colors.violet,
-      Rv = colors.violet,
-      cv = colors.red,
-      ce = colors.red,
-      r = colors.cyan,
-      rm = colors.cyan,
-      ['r?'] = colors.cyan,
-      ['!'] = colors.red,
-      t = colors.red,
-    }
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
+  color = { fg = colors.red },
   padding = { right = 1 },
 }
 
 ins_left({
   'filename',
   cond = conditions.buffer_not_empty,
-  color = { fg = colors.magenta, gui = 'bold' },
+  color = { fg = colors.purple, gui = 'bold' },
 })
 
 ins_left({
@@ -177,7 +129,7 @@ ins_right({
   diagnostics_color = {
     color_error = { fg = colors.red },
     color_warn = { fg = colors.yellow },
-    color_info = { fg = colors.cyan },
+    color_info = { fg = colors.aqua },
   },
 })
 
