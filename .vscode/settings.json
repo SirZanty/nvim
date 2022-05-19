@@ -1,0 +1,110 @@
+{
+    // Config Vim
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindings": [
+        // Select Windows
+        {
+            "before": ["<C-h>"],
+            "after": ["<C-w>", "h"]
+        },
+        {
+            "before": ["<C-j>"],
+            "after": ["<C-w>", "j"]
+        },
+        {
+            "before": ["<C-k>"],
+            "after": ["<C-w>", "k"]
+        },
+        {
+            "before": ["<C-l>"],
+            "after": ["<C-w>", "l"]
+        },
+        // Save file
+        {
+            "before": ["<C-s>"],
+            "commands": ["workbench.action.files.save"]
+        },
+        // Split Vertical
+        {
+            "before": ["<leader>", "v"],
+            "commands": [":vsplit"]
+        },
+        // Split Horizontal
+        {
+            "before": ["<leader>", "h"],
+            "commands": [":split"]
+        },
+        // Disable Highlight
+        {
+            "before": ["<leader>", "<enter>"],
+            "commands": [":nohl"]
+        },
+        // Hover
+        {
+            "before": ["<S-k>"],
+            "commands": ["editor.action.showHover"]
+        },
+        // Signature Help
+        {
+            "before": ["<C-k>"],
+            "commands": ["editor.action.triggerParameterHints"]
+        },
+        // Next Error or Warning
+        {
+            "before": ["]", "d"],
+            "commands": ["editor.action.marker.nextInFiles"]
+        },
+        // Prev Error or Warning
+        {
+            "before": ["[", "d"],
+            "commands": ["editor.action.marker.prevInFiles"]
+        },
+        // Go to Definition
+        {
+            "before": ["g", "d"],
+            "commands": ["editor.action.revealDefinition"]
+        },
+
+    ],
+    "vim.visualModeKeyBindings": [
+        // Move block of text
+        {
+            "before": [">"],
+            "after": [">", "g", "v"]
+        },
+        {
+            "before": ["<"],
+            "after": ["<", "g", "v"]
+        },
+        // Move visual block
+        {
+            "before": ["J"],
+            "commands": ["editor.action.moveLinesDownAction"]
+        },
+        {
+            "before": ["K"],
+            "commands": ["editor.action.moveLinesUpAction"]
+        },
+    ],
+    "vim.handleKeys": {},
+    // Config Vscode
+    "editor.fontFamily": "Hack Nerd Font", // Font
+    "editor.fontSize": 14, // Size
+    "workbench.colorTheme": "Gruvbox Dark Hard", //theme
+    "workbench.activityBar.visible": false, // hiden sidebar
+    "window.menuBarVisibility": "toggle", // hiden menu bar
+    "editor.minimap.enabled": false, // hiden minimap
+    "editor.cursorSmoothCaretAnimation": true, // Cursor Animation
+    "files.trimTrailingWhitespace": true, // Auto Trim White Space
+    "editor.lineHeight": 1.5,
+    "editor.rulers": [120], // 120 Char One Line
+    "editor.wordWrap": "on", // Wrap Line
+    "editor.renderLineHighlight": "none", // Disable Highlight Current Line
+    "editor.scrollbar.verticalScrollbarSize": 0, // Disable scrollbar
+    "workbench.startupEditor": "none", // Disable Get Startup
+    "workbench.layoutControl.enabled": false, //Disable Title Bar Style Custom
+}
