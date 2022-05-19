@@ -27,6 +27,9 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true })
 -- save file
 vim.api.nvim_set_keymap('n', '<C-s>', ':update<CR>', { noremap = true })
 
+-- Disable highlight
+vim.api.nvim_set_keymap('n', '<leader><cr>', ':nohl<CR>', { noremap = true })
+
 -- keep search matches in the middle of the window.
 vim.api.nvim_set_keymap('n', 'n', 'nzzzv', { noremap = true })
 vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', { noremap = true })
