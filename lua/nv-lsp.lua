@@ -19,10 +19,28 @@ local servers = { 'html', 'cssls', 'tsserver', 'clangd' }
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
+-- Borders
+local border = {
+      {"┌", "FloatBorder"},
+      {"─", "FloatBorder"},
+      {"┐", "FloatBorder"},
+      {"│", "FloatBorder"},
+      {"┘", "FloatBorder"},
+      {"─", "FloatBorder"},
+      {"└", "FloatBorder"},
+      {"│", "FloatBorder"},
+}
+local handlers =  {
+  ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border}),
+  ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border }),
+}
+-- end border
+
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities, -- cmp
+    handlers=handlers, -- border
     flags = {
       -- This will be the default in neovim 0.7+
       debounce_text_changes = 150,
