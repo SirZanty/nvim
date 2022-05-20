@@ -15,6 +15,15 @@ return require('packer').startup({function(use)
     'williamboman/nvim-lsp-installer'
   }
 
+  use {
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'saadparwaiz1/cmp_luasnip',
+    'L3MON4D3/LuaSnip',
+  }
+
   -- icon
   use 'kyazdani42/nvim-web-devicons'
 

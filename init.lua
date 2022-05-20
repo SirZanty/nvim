@@ -5,6 +5,9 @@ require 'plugins'
 -- theme
 require 'nv-theme'
 
+-- cmp
+require 'nv-cmp'
+
 -- lsp
 require 'nv-lsp'
 

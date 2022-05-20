@@ -15,9 +15,14 @@ end
 
 local servers = { 'html', 'cssls', 'tsserver', 'clangd' }
 
+-- cmp
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
+    capabilities = capabilities, -- cmp
     flags = {
       -- This will be the default in neovim 0.7+
       debounce_text_changes = 150,
