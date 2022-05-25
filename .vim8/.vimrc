@@ -55,3 +55,6 @@ colorscheme gruvbox
 set guioptions-=T " Toolbar
 set guioptions-=m " Menubar
 set guioptions-=r " Scrollbar
+
+" Netrw
+let g:netrw_liststyle = 3
