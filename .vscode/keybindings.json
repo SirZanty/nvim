@@ -12,81 +12,15 @@
         "command": "workbench.action.previousEditor",
         "when": "editorTextFocus && vim.active"
     },
-    // Move Tab Left
-    {
-        "key": "shift+alt+,",
-        "command": "workbench.action.moveEditorLeftInGroup",
-        "when": "editorTextFocus && vim.active"
-    },
-    // Move Tab Right
-    {
-        "key": "shift+alt+.",
-        "command": "workbench.action.moveEditorRightInGroup",
-        "when": "editorTextFocus && vim.active"
-    },
     // Close Tab
     {
         "key": "alt+c",
         "command": "workbench.action.closeActiveEditor",
         "when": "editorTextFocus && vim.active"
     },
-    // Move Split Left
-    {
-        "key": "shift+ctrl+h",
-        "command": "workbench.action.moveActiveEditorGroupLeft",
-        "when": "editorTextFocus && vim.active"
-    },
-    // Move Split Down
-    {
-        "key": "shift+ctrl+j",
-        "command": "workbench.action.moveActiveEditorGroupDown",
-        "when": "editorTextFocus && vim.active"
-    },
-    // Move Split Up
-    {
-        "key": "shift+ctrl+k",
-        "command": "workbench.action.moveActiveEditorGroupUp",
-        "when": "editorTextFocus && vim.active"
-    },
-    // Move Split Right
-    {
-        "key": "shift+ctrl+l",
-        "command": "workbench.action.moveActiveEditorGroupRight",
-        "when": "editorTextFocus && vim.active"
-    },
     // Open Explorer
     {
         "key": "ctrl+b",
         "command": "workbench.action.toggleSidebarVisibility",
-    },
-    // Select Editor When Open Explorer
-    {
-        "key": "ctrl+l",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "filesExplorerFocus"
-    },
-    // New File Explorer
-    {
-        "key": "ctrl+a",
-        "command": "explorer.newFile",
-        "when": "filesExplorerFocus"
-    },
-    // New Folder Explorer
-    {
-        "key": "ctrl+shift+a",
-        "command": "explorer.newFolder",
-        "when": "filesExplorerFocus"
-    },
-    // Rename File Explorer
-    {
-        "key": "ctrl+r",
-        "command": "renameFile",
-        "when": "filesExplorerFocus"
-    },
-    // Delete File Explorer
-    {
-        "key": "ctrl+d",
-        "command": "deleteFile",
-        "when": "filesExplorerFocus"
     },
 ]

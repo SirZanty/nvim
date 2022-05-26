@@ -34,10 +34,6 @@ New-Item -ItemType SymbolicLink -Path C:\Users\hiep\AppData\Roaming\Code\User\ke
 |<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd>  | Show All Command      |
 |<kbd>Leader</kbd>+<kbd>v</kbd>                 | Split Vertical        |
 |<kbd>Leader</kbd>+<kbd>h</kbd>                 | Split Horizontal      |
-|<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>h</kbd>  | Move Split Left       |
-|<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>j</kbd>  | Move Split Down       |
-|<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>k</kbd>  | Move Split Up         |
-|<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>l</kbd>  | Move Split Right      |
 |<kbd>Shift</kbd>+<kbd>k</kbd>                  | Hover Show Document   |
 |<kbd>Ctrl</kbd>+<kbd>k</kbd>                   | Signature Help        |
 |<kbd>Leader</kbd>+<kbd>Enter</kbd>             | Disable Highlight     |
@@ -58,15 +54,9 @@ New-Item -ItemType SymbolicLink -Path C:\Users\hiep\AppData\Roaming\Code\User\ke
 |-----------------------------------------------|-----------------------|
 |<kbd>Alt</kbd>+<kbd>.</kbd>                    | Next Tab Left         |
 |<kbd>Alt</kbd>+<kbd>,</kbd>                    | Next Tab Right        |
-|<kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>,</kbd>   | Move Tab Current Left |
-|<kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>.</kbd>   | Move Tab Current Right|
 |<kbd>Alt</kbd>+<kbd>c</kbd>                    | Close Tab             |
 
 :warning: Only Explorer Mode
 |           Syntax                              |    Description        |
 |-----------------------------------------------|-----------------------|
 |<kbd>Ctrl</kbd>+<kbd>b</kbd>                   | Open Explorer         |
-|<kbd>Ctrl</kbd>+<kbd>a</kbd>                   | New File              |
-|<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>a</kbd>  | Create Folder         |
-|<kbd>Ctrl</kbd>+<kbd>r</kbd>                   | Rename File/Folder    |
-|<kbd>Ctrl</kbd>+<kbd>d</kbd>                   | Delete File/Folder    |
