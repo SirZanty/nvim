@@ -14,24 +14,6 @@ $ ln -s ~/dotfiles/.config/nvim ~/.config
 $ nvim
 # Command mode
   :PackerInstall # Install plugin
-  :LspInstall omnisharp cssls html tsserver tailwindcss # Config support: c#(.Net) javascript typescript html css tailwind
-  :TSInstall html css javascript typescript json c c_sharp bash markdown # Support highlight code
-```
-
-## Fix omnisharp textDocument/definition
-```lua
-use 'Hoffs/omnisharp-extended-lsp.nvim'
-```
-- OmniSharp settings
-
-> add config `~/.omnisharp/omnisharp.json`
-
-```json
-{
-  "RoslynExtensionsOptions": {
-    "enableDecompilationSupport": true
-  }
-}
 ```
 
 ## Vim action select/yank/delete content between brackets

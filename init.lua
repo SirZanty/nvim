@@ -192,7 +192,6 @@ end
 local servers = {
     'tsserver',
     'eslint',
-    'omnisharp',
     'tailwindcss',
     'html',
     'cssls',
@@ -209,6 +208,16 @@ for _, lsp in ipairs(servers) do
         flags = lsp_flags,
     }
 end
+
+-- Fix omnisharp `textDocument/definition`
+require('lspconfig')['omnisharp'].setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = lsp_flags,
+    handlers = {
+        ['textDocument/definition'] = require('omnisharp_extended').handler,
+    },
+}
 
 -- Customizing how diagnostics are displayed
 vim.diagnostic.config({
@@ -386,7 +395,7 @@ dap.configurations.cs = {
         name = 'launch - netcoredbg',
         request = 'launch',
         program = function()
-            return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/net6.0/', 'file')
+            return vim.fn.input('Path to dll ', vim.fn.getcwd() .. '/bin/Debug/net6.0/', 'file')
         end,
     },
 }

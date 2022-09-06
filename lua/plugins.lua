@@ -11,6 +11,7 @@ return require('packer').startup({function()
     use 'neovim/nvim-lspconfig'
     use 'folke/trouble.nvim'
     use 'williamboman/nvim-lsp-installer'
+    use 'Hoffs/omnisharp-extended-lsp.nvim' -- fix omnisharp `textDocument/definition`
     -- auto complete
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
@@ -69,8 +70,6 @@ return require('packer').startup({function()
     use 'goolord/alpha-nvim'
     -- Ibus
     use 'phamhiep2506/ibus.nvim'
-    -- FixCursorHold
-    use 'antoinemadec/FixCursorHold.nvim'
 
   if packer_bootstrap then
     require('packer').sync()
