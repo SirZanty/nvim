@@ -141,8 +141,7 @@ local on_attach = function(client, bufnr)
     keymap('n', 'gD', vim.lsp.buf.declaration, bufopts)
     keymap('n', 'gd', vim.lsp.buf.definition, bufopts)
     keymap('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    -- keymap('n', 'gr', vim.lsp.buf.references, bufopts)
-    keymap('n', 'gr', ':TroubleToggle lsp_references<CR>', bufopts)
+    keymap('n', 'gr', vim.lsp.buf.references, bufopts)
     keymap('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
 
     keymap('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -469,6 +468,7 @@ require('transparent').setup({
         'TelescopeBorder',
         'NormalFloat',
         'FloatBorder',
+        'TroubleNormal',
     }
 })
 
