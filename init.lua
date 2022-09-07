@@ -476,4 +476,8 @@ require('transparent').setup({
 require('alpha').setup(require'alpha.themes.startify'.config)
 
 -- Fix ibus
-require('ibus').setup()
+require('ibus').setup({
+    ibus_engine_normal_mode = 'BambooUs::Candy',
+    ibus_engine_insert_mode = 'Bamboo::Candy',
+    ibus_engine_auto_mode = false,
+})

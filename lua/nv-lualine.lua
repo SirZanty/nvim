@@ -142,13 +142,13 @@ ins_left {
         return msg
     end,
     icon = ' LSP:',
-    color = { fg = colors.fg, gui = 'bold' },
+    color = { fg = colors.blue, gui = 'bold' },
 }
 
 ins_right {
     'branch',
     icon = '',
-    color = { fg = colors.violet, gui = 'bold' },
+    color = { fg = colors.magenta, gui = 'bold' },
 }
 
 ins_right {
@@ -163,7 +163,6 @@ ins_right {
 
 ins_right {
     'fileformat',
-    color = { fg = colors.fg },
 }
 
 ins_right {
