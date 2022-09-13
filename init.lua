@@ -394,7 +394,7 @@ dap.configurations.cs = {
         name = 'launch - netcoredbg',
         request = 'launch',
         program = function()
-            return vim.fn.input('Path to dll ', vim.fn.getcwd() .. '/bin/Debug/net6.0/', 'file')
+            return vim.fn.input('Path to dll ', vim.fn.getcwd() .. '/bin/Debug/', 'file')
         end,
     },
 }
@@ -461,14 +461,15 @@ keymap('t', '<C-t>', ':exe v:count1 . \'ToggleTerm\'<CR>', opts)
 require('transparent').setup({
     enable = true,
     extra_groups = {
-        'NvimTreeNormal',
+        'NvimTreeNormal', -- nvim bg
         'NvimTreeNormalNC',
-        'TelescopeNormal',
+        'TelescopeNormal', -- telescope bg
         'TelescopeNormalNC',
         'TelescopeBorder',
-        'NormalFloat',
+        'NormalFloat', -- float bg
         'FloatBorder',
         'TroubleNormal',
+        'MsgArea', -- msg mode command bg
     }
 })
 
