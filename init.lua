@@ -1,3 +1,5 @@
+require('bootstrap')
+
 -- Local mapping
 local opts = { noremap=true, silent=true }
 local keymap = vim.keymap.set
@@ -48,6 +50,8 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.completeopt = 'menu,menuone,noselect'
+
+require('keymappings')
 
 keymap('v', '>', '>gv', opts)
 keymap('v', '<', '<gv', opts)
@@ -332,10 +336,10 @@ keymap('n', '<leader>gd', ':Gitsigns diffthis<CR>', opts)
 keymap('n', '<leader>gi', ':Gitsigns blame_line<CR>', opts)
 
 -- lualine
-require('nv-lualine')
+require('core.lualine')
 
 -- bufferline
-require('bufferline').setup()
+require('core.bufferline')
 
 -- buffers :bnext and :bprevious
 keymap('n', '<A-.>', ':BufferLineCycleNext<CR>', opts)
@@ -470,6 +474,9 @@ require('transparent').setup({
         'FloatBorder',
         'TroubleNormal',
         'MsgArea', -- msg mode command bg
+        'WhichKey',
+        'WhichKeyFloat',
+        'WhichKeyBorder',
     }
 })
 
@@ -482,3 +489,6 @@ require('ibus').setup({
     ibus_engine_insert_mode = 'Bamboo::Candy',
     ibus_engine_auto_mode = false,
 })
+
+-- Which-key
+require('core.which-key')
