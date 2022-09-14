@@ -13,15 +13,8 @@ keymap('v', '<', '<gv', opts)
 keymap('n', 'n', 'nzzzv', opts)
 keymap('n', 'N', 'Nzzzv', opts)
 
-keymap('n', '<leader>v', ':vsplit<CR>', opts) -- doc
-keymap('n', '<leader>x', ':split<CR>', opts) -- ngang
-
-keymap('n', '<leader>sv', ':source $MYVIMRC<CR>', opts) -- source reload
-
 keymap('v', 'J', ':m \'>+1<CR>gv=gv', opts)
 keymap('v', 'K', ':m \'<-2<CR>gv=gv', opts)
-
-keymap('n', '<leader><CR>', ':nohlsearch<CR>', opts)
 
 -- Select split window
 keymap('n', '<C-h>', '<C-w>h', opts)
@@ -50,14 +43,10 @@ keymap('n', '<A-c>', ':bdelete<CR>', opts)
 keymap('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
 
 -- LSP
-keymap('n', '<leader>e', vim.diagnostic.open_float, opts)
 keymap('n', '[d', vim.diagnostic.goto_prev, opts)
 keymap('n', ']d', vim.diagnostic.goto_next, opts)
 
 -- Debug
-keymap('n', '<leader>dui', ':lua require\'dapui\'.toggle()<CR>', opts)
-keymap('n', '<leader>di', ':lua require\'dapui\'.eval()<CR>', opts)
-keymap('n', '<leader>db', ':lua require\'dap\'.toggle_breakpoint()<CR>', opts)
 keymap('n', '<F5>', ':lua require\'dap\'.continue()<CR>', opts)
 keymap('n', '<F10>', ':lua require\'dap\'.step_over()<CR>', opts)
 keymap('n', '<F11>', ':lua require\'dap\'.step_into()<CR>', opts)
@@ -79,7 +68,7 @@ keymap('t', '<C-t>', ':exe v:count1 . \'ToggleTerm\'<CR>', opts)
 ]]
 local wk = require('which-key')
 
-local wk_opts = {
+local wk_opts_normal = {
     mode = 'n',
     prefix = '<leader>',
     buffer = nil,
@@ -88,7 +77,27 @@ local wk_opts = {
     nowait = true
 }
 
+local wk_opts_visual = {
+    mode = 'v',
+    prefix = '<leader>',
+    buffer = nil,
+    silent = true,
+    noremap = true,
+    nowait = true
+}
+
+-- Normal Mode
 wk.register({
+    -- Split Window
+    s = {
+        name = 'Split Window',
+        h = { ':vsplit<CR>', 'Split Window Horizontal' },
+        v = { ':split<CR>', 'Split Window Vertical' },
+    },
+
+    -- Disable Highlight
+    ['<CR>'] = { ':nohlsearch<CR>', 'Disable Highlight' },
+
     -- Telescope
     f = {
         name = 'Telescope',
@@ -96,7 +105,7 @@ wk.register({
         g = { ':Telescope live_grep<CR>', 'Find Word' },
         b = { ':Telescope buffers<CR>', 'Find Buffer' },
         h = { ':Telescope help_tags<CR>', 'Find Documentation Vim' },
-        t = { ':Telescope treesitter<CR>', 'Treesitter Picker' },
+        t = { ':Telescope treesitter<CR>', 'Telescope Treesitter Picker' },
     },
 
     -- Bufferline
@@ -104,9 +113,9 @@ wk.register({
         name = 'Bufferline',
         c = {
             name = 'Close',
-            p = { ':BufferLinePickClose<CR>', 'Pick' },
-            l = { ':BufferLineCloseLeft<CR>', 'Side Left' },
-            r = { ':BufferLineCloseRight<CR>', 'Side Right' },
+            p = { ':BufferLinePickClose<CR>', 'Buffer Pick Close' },
+            l = { ':BufferLineCloseLeft<CR>', 'Buffer Close Left' },
+            r = { ':BufferLineCloseRight<CR>', 'Buffer Close Right' },
         },
         g = {
             function()
@@ -117,39 +126,72 @@ wk.register({
         },
         s = {
             name = 'Sort',
-            e = { ':BufferLineSortByExtension<CR>', 'By Extension' },
-            d = { ':BufferLineSortByDirectory<CR>', 'By Directory' },
+            e = { ':BufferLineSortByExtension<CR>', 'Buffer Sort By Extension' },
+            d = { ':BufferLineSortByDirectory<CR>', 'Buffer Sort By Directory' },
         },
-        p = { ':BufferLineTogglePin<CR>', 'Toggle Pin' }
+        p = { ':BufferLineTogglePin<CR>', 'Buffer Toggle Pin' }
     },
 
     -- Lsp
     l = {
         name = 'LSP',
-        n = { ':lua vim.diagnostic.goto_next()<CR>', 'Go To Next Diagnostic' },
-        p = { ':lua vim.diagnostic.goto_prev()<CR>', 'Go To Previous Diagnostic' },
-        e = { ':lua vim.diagnostic.open_float()<CR>', 'Open Float Diagnostic' },
-        q = { ':TroubleToggle document_diagnostics<CR>', 'Open Trouble Diagnostic' },
+        e = { ':lua vim.diagnostic.open_float()<CR>', 'LSP Open Float Diagnostic' },
+        q = { ':TroubleToggle document_diagnostics<CR>', 'LSP Open Trouble Diagnostic' },
     },
 
     -- Gitsigns
     g = {
         name = 'Git',
-        n = { ':Gitsigns next_hunk<CR>', 'Next Hunk' },
-        N = { ':Gitsigns prev_hunk<CR>', 'Previous Hunk' },
-        p = { ':Gitsigns preview_hunk<CR>', 'Preview Hunk' },
-        d = { ':Gitsigns diffthis<CR>', 'Diff This' },
-        i = { ':Gitsigns blame_line<CR>', 'Blame Line' },
+        s = { ':Gitsigns stage_hunk<CR>', 'Git Stage Hunk' },
+        r = { ':Gitsigns reset_hunk<CR>', 'Git Reset Hunk' },
+        S = { ':Gitsigns stage_buffer<CR>', 'Git Stage Buffer' },
+        u = { ':Gitsigns undo_stage_hunk<CR>', 'Git Undo Stage Buffer' },
+        R = { ':Gitsigns reset_buffer<CR>', 'Git Reset Buffer' },
+        p = { ':Gitsigns preview_hunk<CR>', 'Git Preview Hunk' },
+        b = { ':lua require\'gitsigns\'.blame_line{full=true}<CR>', 'Git Blame Line Full' },
+        d = { ':Gitsigns diffthis<CR>', 'Git Diff This' },
+        D = { ':lua require\'gitsigns\'.diffthis(\'~\')<CR>', 'Git Diff This' },
+        n = { ':Gitsigns next_hunk<CR>', 'Git Next Hunk' },
+        N = { ':Gitsigns prev_hunk<CR>', 'Git Previous Hunk' },
     },
-    h = {
-        name = 'Hop',
-        c = { ':HopChar2<CR>', 'Hop Char 2' },
-        l = { ':HopLine<CR>', 'Hop Line' },
-        p = { ':HopPattern<CR>', 'Hop Pattern' }
+    j = {
+        name = 'Jump',
+        w = { ':HopWord<CR>', 'Jump Word' },
+        c = {
+            name = 'Jump Char',
+            ['1'] = { ':HopChar1<CR>', 'Jump Char 1' },
+            ['2'] = { ':HopChar2<CR>', 'Jump Char 2' },
+        },
+        l = {
+            name = 'Jump Line',
+            l = { ':HopLine<CR>', 'Jump Line' },
+            s = { ':HopLineStart<CR>', 'Jump Line Start' },
+        },
+        p = { ':HopPattern<CR>', 'Jump Pattern' },
     },
     t = {
         name = 'Terminal',
-        t = { ':ToggleTerm direction=float<CR>', 'Open Float' },
-        b = { ':ToggleTerm direction=horizontal<CR>', 'Open Float' },
+        f = { ':ToggleTerm direction=float<CR>', 'Open Terminal Float' },
+        h = { ':ToggleTerm direction=horizontal<CR>', 'Open Terminal Horizontal' },
+        v = { ':ToggleTerm direction=vertical<CR>', 'Open Terminal Vertical' },
+        t = { ':ToggleTerm direction=tab<CR>', 'Open Terminal Tab' },
     },
-}, wk_opts)
+
+    -- Debug
+    d = {
+        name = 'Debug',
+        u = { ':lua require\'dapui\'.toggle()<CR>', 'Open Debug UI' },
+        i = { ':lua require\'dapui\'.eval()<CR>', 'Open Debug Eval' },
+        b = { ':lua require\'dap\'.toggle_breakpoint()<CR>', 'Debug Toggle Breakpoint' },
+    },
+}, wk_opts_normal)
+
+-- Visual Mode
+wk.register({
+    -- Gitsigns
+    g = {
+        name = 'Git',
+        s = { ':Gitsigns stage_hunk<CR>', 'Git Stage Hunk' },
+        r = { ':Gitsigns reset_hunk<CR>', 'Git Reset Hunk' },
+    },
+}, wk_opts_visual)
