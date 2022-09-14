@@ -70,10 +70,3 @@ vim.diagnostic.config({
     update_in_insert = true,
     severity_sort = true,
 })
-
--- Change prefix/character preceding the diagnostics' virtual text
-vim.diagnostic.config({
-  virtual_text = {
-    prefix = '●', -- Could be '●', '▎', 'x'
-  }
-})
