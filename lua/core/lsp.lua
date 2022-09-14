@@ -1,21 +1,3 @@
-local opts = { noremap=true, silent=true }
-local keymap = vim.keymap.set
-
-local on_attach = function(client, bufnr)
-    keymap('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    keymap('n', 'gd', vim.lsp.buf.definition, bufopts)
-    keymap('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    keymap('n', 'gr', vim.lsp.buf.references, bufopts)
-    keymap('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
-
-    keymap('n', 'K', vim.lsp.buf.hover, bufopts)
-    keymap('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-
-    keymap('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-    keymap('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-    keymap('n', '<leader>fm', vim.lsp.buf.formatting, bufopts)
-end
-
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
@@ -67,7 +49,6 @@ local servers = {
 for _, lsp in ipairs(servers) do
     require('lspconfig')[lsp].setup {
         capabilities = capabilities,
-        on_attach = on_attach,
         flags = lsp_flags,
     }
 end
@@ -75,7 +56,6 @@ end
 -- Fix omnisharp `textDocument/definition`
 require('lspconfig')['omnisharp'].setup {
     capabilities = capabilities,
-    on_attach = on_attach,
     flags = lsp_flags,
     handlers = {
         ['textDocument/definition'] = require('omnisharp_extended').handler,
@@ -91,3 +71,9 @@ vim.diagnostic.config({
     severity_sort = true,
 })
 
+-- Change prefix/character preceding the diagnostics' virtual text
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = '●', -- Could be '●', '▎', 'x'
+  }
+})

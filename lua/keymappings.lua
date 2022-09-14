@@ -45,6 +45,8 @@ keymap('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
 -- LSP
 keymap('n', '[d', vim.diagnostic.goto_prev, opts)
 keymap('n', ']d', vim.diagnostic.goto_next, opts)
+keymap('n', 'K', vim.lsp.buf.hover, opts)
+keymap('n', '<C-k>', vim.lsp.buf.signature_help, opts)
 
 -- Debug
 keymap('n', '<F5>', ':lua require\'dap\'.continue()<CR>', opts)
@@ -132,13 +134,6 @@ wk.register({
         p = { ':BufferLineTogglePin<CR>', 'Buffer Toggle Pin' }
     },
 
-    -- Lsp
-    l = {
-        name = 'LSP',
-        e = { ':lua vim.diagnostic.open_float()<CR>', 'LSP Open Float Diagnostic' },
-        q = { ':TroubleToggle document_diagnostics<CR>', 'LSP Open Trouble Diagnostic' },
-    },
-
     -- Gitsigns
     g = {
         name = 'Git',
@@ -154,6 +149,8 @@ wk.register({
         n = { ':Gitsigns next_hunk<CR>', 'Git Next Hunk' },
         N = { ':Gitsigns prev_hunk<CR>', 'Git Previous Hunk' },
     },
+
+    -- Hop
     j = {
         name = 'Jump',
         w = { ':HopWord<CR>', 'Jump Word' },
@@ -169,12 +166,32 @@ wk.register({
         },
         p = { ':HopPattern<CR>', 'Jump Pattern' },
     },
+
+    -- Terminal
     t = {
         name = 'Terminal',
         f = { ':ToggleTerm direction=float<CR>', 'Open Terminal Float' },
         h = { ':ToggleTerm direction=horizontal<CR>', 'Open Terminal Horizontal' },
         v = { ':ToggleTerm direction=vertical<CR>', 'Open Terminal Vertical' },
         t = { ':ToggleTerm direction=tab<CR>', 'Open Terminal Tab' },
+    },
+
+    -- Lsp
+    l = {
+        name = 'LSP',
+        g = {
+            name = 'LSP Go To',
+            D = { ':lua vim.lsp.buf.declaration()<CR>', 'LSP Go To Declaration' },
+            d = { ':lua vim.lsp.buf.definition()<CR>', 'LSP Go To Definition' },
+            i = { ':lua vim.lsp.buf.implementation()<CR>', 'LSP Go To Implementation' },
+            r = { ':lua vim.lsp.buf.references()<CR>', 'LSP Go To References' },
+        },
+        D = { ':lua vim.lsp.buf.type_definition()<CR>', 'LSP Go To Type Definition' },
+        e = { ':lua vim.diagnostic.open_float()<CR>', 'LSP Open Float Diagnostic' },
+        q = { ':TroubleToggle document_diagnostics<CR>', 'LSP Open Trouble Diagnostic' },
+        a = { ':lua vim.lsp.buf.code_action()<CR>', 'LSP Code Action' },
+        r = { ':lua vim.lsp.buf.rename()<CR>', 'LSP Rename' },
+        f = { ':lua vim.lsp.buf.formatting()<CR>', 'LSP Formatting' },
     },
 
     -- Debug

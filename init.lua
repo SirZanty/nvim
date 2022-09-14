@@ -48,7 +48,7 @@ require('core.Comment')
 
 -- Debug
 require('core.dap')
-require('dapui')
+require('dapui').setup()
 
 -- Color hex
 require('core.colorizer')
