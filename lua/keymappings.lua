@@ -49,6 +49,29 @@ keymap('n', '<A-c>', ':bdelete<CR>', opts)
 -- Nvim-tree
 keymap('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
 
+-- LSP
+keymap('n', '<leader>e', vim.diagnostic.open_float, opts)
+keymap('n', '[d', vim.diagnostic.goto_prev, opts)
+keymap('n', ']d', vim.diagnostic.goto_next, opts)
+
+-- Debug
+keymap('n', '<leader>dui', ':lua require\'dapui\'.toggle()<CR>', opts)
+keymap('n', '<leader>di', ':lua require\'dapui\'.eval()<CR>', opts)
+keymap('n', '<leader>db', ':lua require\'dap\'.toggle_breakpoint()<CR>', opts)
+keymap('n', '<F5>', ':lua require\'dap\'.continue()<CR>', opts)
+keymap('n', '<F10>', ':lua require\'dap\'.step_over()<CR>', opts)
+keymap('n', '<F11>', ':lua require\'dap\'.step_into()<CR>', opts)
+keymap('n', '<F12>', ':lua require\'dap\'.step_out()<CR>', opts)
+
+-- Toggle Terminal
+keymap('t', '<C-\\>', '<C-\\><C-n>', opts)
+keymap('t', '<C-h>', '<C-w>h', opts)
+keymap('t', '<C-j>', '<C-w>j', opts)
+keymap('t', '<C-k>', '<C-w>k', opts)
+keymap('t', '<C-l>', '<C-w>l', opts)
+-- Split terminal for example: 2<C-t> will open terminal 2
+keymap('t', '<C-t>', ':exe v:count1 . \'ToggleTerm\'<CR>', opts)
+
 --[[
 *******************
 *  Keymapping wk  *
@@ -98,5 +121,35 @@ wk.register({
             d = { ':BufferLineSortByDirectory<CR>', 'By Directory' },
         },
         p = { ':BufferLineTogglePin<CR>', 'Toggle Pin' }
+    },
+
+    -- Lsp
+    l = {
+        name = 'LSP',
+        n = { ':lua vim.diagnostic.goto_next()<CR>', 'Go To Next Diagnostic' },
+        p = { ':lua vim.diagnostic.goto_prev()<CR>', 'Go To Previous Diagnostic' },
+        e = { ':lua vim.diagnostic.open_float()<CR>', 'Open Float Diagnostic' },
+        q = { ':TroubleToggle document_diagnostics<CR>', 'Open Trouble Diagnostic' },
+    },
+
+    -- Gitsigns
+    g = {
+        name = 'Git',
+        n = { ':Gitsigns next_hunk<CR>', 'Next Hunk' },
+        N = { ':Gitsigns prev_hunk<CR>', 'Previous Hunk' },
+        p = { ':Gitsigns preview_hunk<CR>', 'Preview Hunk' },
+        d = { ':Gitsigns diffthis<CR>', 'Diff This' },
+        i = { ':Gitsigns blame_line<CR>', 'Blame Line' },
+    },
+    h = {
+        name = 'Hop',
+        c = { ':HopChar2<CR>', 'Hop Char 2' },
+        l = { ':HopLine<CR>', 'Hop Line' },
+        p = { ':HopPattern<CR>', 'Hop Pattern' }
+    },
+    t = {
+        name = 'Terminal',
+        t = { ':ToggleTerm direction=float<CR>', 'Open Float' },
+        b = { ':ToggleTerm direction=horizontal<CR>', 'Open Float' },
     },
 }, wk_opts)

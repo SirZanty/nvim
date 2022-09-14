@@ -1,5 +1,7 @@
+local opts = { noremap=true, silent=true }
+local keymap = vim.keymap.set
+
 local on_attach = function(client, bufnr)
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
     keymap('n', 'gD', vim.lsp.buf.declaration, bufopts)
     keymap('n', 'gd', vim.lsp.buf.definition, bufopts)
     keymap('n', 'gi', vim.lsp.buf.implementation, bufopts)
