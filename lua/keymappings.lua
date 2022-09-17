@@ -93,8 +93,8 @@ wk.register({
     -- Split Window
     s = {
         name = 'Split Window',
-        h = { ':vsplit<CR>', 'Split Window Horizontal' },
-        v = { ':split<CR>', 'Split Window Vertical' },
+        v = { ':vsplit<CR>', 'Split Window Horizontal' },
+        x = { ':split<CR>', 'Split Window Vertical' },
     },
 
     -- Disable Highlight

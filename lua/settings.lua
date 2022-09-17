@@ -4,7 +4,13 @@ vim.opt.syntax = 'on'
 -- Usage mouse
 vim.opt.mouse = 'a'
 
+-- Spell check
 -- vim.opt.spell = true
+
+-- Fix cmd complete
+vim.cmd[[
+    set wildcharm=<C-z>
+]]
 
 -- Folding
 vim.opt.foldmethod = 'manual'
