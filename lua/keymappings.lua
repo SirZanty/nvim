@@ -108,6 +108,7 @@ wk.register({
         b = { ':Telescope buffers<CR>', 'Find Buffer' },
         h = { ':Telescope help_tags<CR>', 'Find Documentation Vim' },
         t = { ':Telescope treesitter<CR>', 'Telescope Treesitter Picker' },
+        r = { ':Telescope file_browser<CR>', 'Telescope File Browser'},
     },
 
     -- Bufferline

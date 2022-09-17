@@ -32,6 +32,7 @@ return require('packer').startup({function()
     use 'nvim-lualine/lualine.nvim'
     -- find file
     use 'nvim-telescope/telescope.nvim'
+    use 'nvim-telescope/telescope-file-browser.nvim'
     use 'nvim-lua/plenary.nvim'
     -- markdown align
     use 'junegunn/vim-easy-align'
