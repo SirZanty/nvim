@@ -2,6 +2,8 @@ require('bootstrap')
 
 require('settings')
 
+require('keymappings')
+
 -- load plugin
 require('plugins')
 
@@ -81,5 +83,5 @@ require('core.ibus')
 -- Which-key
 require('core.which-key')
 
--- Key Mappings
-require('keymappings')
+-- Key Mappings Which-key
+require('keymappings_wk')
