@@ -39,6 +39,7 @@ vim.cmd[[
     autocmd Filetype cs setlocal ts=4 sw=4
     autocmd Filetype lua setlocal ts=4 sw=4
     autocmd Filetype markdown setlocal ts=4 sw=4
+    autocmd Filetype vim setlocal ts=4 sw=4
 ]]
 
 vim.opt.laststatus = 2

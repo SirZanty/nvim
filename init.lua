@@ -2,6 +2,11 @@ require('bootstrap')
 
 require('settings')
 
+-- config neovide
+vim.cmd[[
+    source $HOME/.config/nvim/neovide.vim
+]]
+
 require('keymappings')
 
 -- load plugin
