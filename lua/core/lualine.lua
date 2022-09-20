@@ -23,6 +23,7 @@ local config = {
             'dapui_stacks',
             'dapui_breakpoints',
             'dapui_watches',
+            'dapui_console',
             'dap-repl',
             'Trouble',
         },

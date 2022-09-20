@@ -20,3 +20,8 @@ dap.configurations.cs = {
         end,
     },
 }
+
+vim.cmd[[
+    autocmd Filetype dapui_* setlocal nocursorline
+    autocmd Filetype dap-repl setlocal nocursorline
+]]

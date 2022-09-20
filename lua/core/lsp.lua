@@ -59,7 +59,7 @@ require('lspconfig')['omnisharp'].setup {
     flags = lsp_flags,
     handlers = {
         ['textDocument/definition'] = require('omnisharp_extended').handler,
-    },
+    }
 }
 
 -- Customizing how diagnostics are displayed
