@@ -33,6 +33,51 @@ for type, icon in pairs(signs) do
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+-- Change diagnostic virtual text
+vim.cmd [[
+    highlight DiagnosticVirtualTextError guibg=none
+    highlight DiagnosticVirtualTextWarn guibg=none
+    highlight DiagnosticVirtualTextHint guibg=none
+    highlight DiagnosticVirtualTextInfo guibg=none
+]]
+
+-- Use an on_attach function to only map the following keys
+local wk = require('which-key')
+
+local wk_opts_normal = {
+    mode = 'n',
+    prefix = '<leader>',
+    buffer = nil,
+    silent = true,
+    noremap = true,
+    nowait = true,
+    buffer = bufnr
+}
+
+local on_attach = function(client, bufnr)
+    wk.register({
+        l = {
+            name = 'LSP',
+            g = {
+                name = 'LSP Go To',
+                D = { vim.lsp.buf.declaration, 'LSP Go To Declaration' },
+                d = { vim.lsp.buf.definition, 'LSP Go To Definition' },
+                i = { vim.lsp.buf.implementation, 'LSP Go To Implementation' },
+                r = { vim.lsp.buf.references, 'LSP Go To References' },
+            },
+            D = { vim.lsp.buf.type_definition, 'LSP Go To Type Definition' },
+            e = { vim.diagnostic.open_float, 'LSP Open Float Diagnostic' },
+            q = { vim.diagnostic.setloclist, 'LSP Open List Diagnostic' },
+            a = { vim.lsp.buf.code_action, 'LSP Code Action' },
+            r = { vim.lsp.buf.rename, 'LSP Rename' },
+            f = { vim.lsp.buf.formatting, 'LSP Formatting' },
+            h = { vim.lsp.buf.signature_help, 'LSP Signature Help' },
+            k = { vim.lsp.buf.hover, 'LSP Hover' },
+
+        },
+    }, wk_opts_normal)
+end
+
 -- List server
 local servers = {
     'tsserver',
@@ -48,6 +93,7 @@ local servers = {
 -- Start config lsp server
 for _, lsp in ipairs(servers) do
     require('lspconfig')[lsp].setup {
+        on_attach = on_attach,
         capabilities = capabilities,
         flags = lsp_flags,
     }
@@ -55,6 +101,7 @@ end
 
 -- Fix omnisharp `textDocument/definition`
 require('lspconfig')['omnisharp'].setup {
+    on_attach = on_attach,
     capabilities = capabilities,
     flags = lsp_flags,
     handlers = {
@@ -64,9 +111,24 @@ require('lspconfig')['omnisharp'].setup {
 
 -- Customizing how diagnostics are displayed
 vim.diagnostic.config({
-    virtual_text = false,
+    virtual_text = true,
     signs = true,
     underline = true,
     update_in_insert = true,
     severity_sort = true,
 })
+
+vim.diagnostic.config({
+    virtual_text = {
+        source = 'always',
+        prefix = '●', -- Could be '●', '▎', 'x'
+    },
+    float = {
+        source = 'always',
+    },
+})
+
+-- Disable cursorline
+vim.cmd[[
+    autocmd Filetype qf setlocal nocursorline wrap
+]]

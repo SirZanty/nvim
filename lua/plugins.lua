@@ -3,7 +3,6 @@ return require('packer').startup({function()
     use 'folke/tokyonight.nvim'
     -- lsp
     use 'neovim/nvim-lspconfig'
-    use 'folke/trouble.nvim'
     use 'williamboman/nvim-lsp-installer'
     use 'Hoffs/omnisharp-extended-lsp.nvim' -- fix omnisharp `textDocument/definition`
     -- auto complete

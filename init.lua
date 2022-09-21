@@ -19,9 +19,6 @@ require('core.lsp-installer')
 -- lspconfig
 require('core.lsp')
 
--- Trouble log list
-require('trouble').setup()
-
 -- Auto Completion
 require('core.cmp')
 
@@ -44,7 +41,7 @@ require('core.bufferline')
 require('core.telescope')
 
 -- Comment
-require('core.Comment')
+require('core.comment')
 
 -- Debug
 require('core.dap')

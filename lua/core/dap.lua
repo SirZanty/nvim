@@ -21,6 +21,7 @@ dap.configurations.cs = {
     },
 }
 
+-- Disable cursorline
 vim.cmd[[
     autocmd Filetype dapui_* setlocal nocursorline
     autocmd Filetype dap-repl setlocal nocursorline
