@@ -19,6 +19,9 @@ require('core.lsp-installer')
 -- lspconfig
 require('core.lsp')
 
+-- outline
+require('core.outline')
+
 -- Auto Completion
 require('core.cmp')
 

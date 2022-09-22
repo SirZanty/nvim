@@ -5,6 +5,7 @@ return require('packer').startup({function()
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
     use 'Hoffs/omnisharp-extended-lsp.nvim' -- fix omnisharp `textDocument/definition`
+    use 'simrat39/symbols-outline.nvim'
     -- auto complete
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'

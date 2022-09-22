@@ -73,6 +73,7 @@ local on_attach = function(client, bufnr)
             f = { vim.lsp.buf.formatting, 'LSP Formatting' },
             h = { vim.lsp.buf.signature_help, 'LSP Signature Help' },
             k = { vim.lsp.buf.hover, 'LSP Hover' },
+            s = { ':SymbolsOutline<CR>', 'LSP Symbols Outline' },
 
         },
     }, wk_opts_normal)
