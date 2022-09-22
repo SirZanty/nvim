@@ -55,6 +55,8 @@ return require('packer').startup({function()
     use 'lukas-reineke/indent-blankline.nvim'
     -- Scroll smooth
     use 'karb94/neoscroll.nvim'
+    -- Scroll bar
+    use 'petertriho/nvim-scrollbar'
     -- Format code
     use 'sbdchd/neoformat'
     -- Terminal
