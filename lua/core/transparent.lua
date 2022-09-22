@@ -1,7 +1,7 @@
 require('transparent').setup({
     enable = true,
     extra_groups = {
-        'NvimTreeNormal', -- nvim bg
+        'NvimTreeNormal', -- nvim-tree bg
         'NvimTreeNormalNC',
         'TelescopeNormal', -- telescope bg
         'TelescopeNormalNC',

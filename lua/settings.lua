@@ -74,3 +74,11 @@ vim.opt.termguicolors = true
 
 -- set background
 vim.opt.background = 'dark'
+
+-- Disable cursorline
+vim.cmd[[
+    autocmd Filetype qf setlocal nocursorline wrap
+    autocmd Filetype Trouble setlocal nocursorline wrap
+    autocmd Filetype dapui_* setlocal nocursorline
+    autocmd Filetype dap-repl setlocal nocursorline
+]]

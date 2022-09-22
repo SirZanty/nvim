@@ -19,6 +19,9 @@ require('core.lsp-installer')
 -- lspconfig
 require('core.lsp')
 
+-- Trouble
+require('trouble').setup()
+
 -- outline
 require('core.outline')
 

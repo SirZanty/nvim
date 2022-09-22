@@ -119,6 +119,18 @@ wk.register({
         i = { ':lua require\'dapui\'.eval()<CR>', 'Open Debug Eval' },
         b = { ':lua require\'dap\'.toggle_breakpoint()<CR>', 'Debug Toggle Breakpoint' },
     },
+
+    -- Trouble
+    x = {
+        name = 'Trouble',
+        x = { ':TroubleToggle<CR>', 'Trouble Toggle' },
+        w = { ':TroubleToggle workspace_diagnostics<CR>', 'Trouble Workspace Diagnostics' },
+        d = { ':TroubleToggle document_diagnostics<CR>', 'Trouble Document Diagnostics' },
+        l = { ':TroubleToggle loclist<CR>', 'Trouble Loglist' },
+        q = { ':TroubleToggle quickfix<CR>', 'Trouble Quickfix' },
+        r = { ':TroubleToggle lsp_references<CR>', 'Trouble Lsp References' },
+        R = { ':TroubleRefresh<CR>', 'Trouble Refresh' },
+    },
 }, wk_opts_normal)
 
 -- Visual Mode

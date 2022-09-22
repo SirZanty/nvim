@@ -34,12 +34,12 @@ for type, icon in pairs(signs) do
 end
 
 -- Change diagnostic virtual text
--- vim.cmd [[
---     highlight DiagnosticVirtualTextError guibg=none
---     highlight DiagnosticVirtualTextWarn guibg=none
---     highlight DiagnosticVirtualTextHint guibg=none
---     highlight DiagnosticVirtualTextInfo guibg=none
--- ]]
+vim.cmd [[
+    highlight DiagnosticVirtualTextError guibg=none
+    highlight DiagnosticVirtualTextWarn guibg=none
+    highlight DiagnosticVirtualTextHint guibg=none
+    highlight DiagnosticVirtualTextInfo guibg=none
+]]
 
 -- Use an on_attach function to only map the following keys
 local wk = require('which-key')
@@ -128,8 +128,3 @@ vim.diagnostic.config({
         source = 'always',
     },
 })
-
--- Disable cursorline
-vim.cmd[[
-    autocmd Filetype qf setlocal nocursorline wrap
-]]
