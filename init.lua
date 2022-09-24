@@ -78,7 +78,7 @@ require('core.neoformat')
 require('core.toggleterm')
 
 -- Transparent
--- require('core.transparent')
+require('core.transparent')
 
 -- Dashboard/Alpha
 require('core.alpha')
