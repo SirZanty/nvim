@@ -26,6 +26,7 @@ local config = {
             'dapui_console',
             'dap-repl',
             'Trouble',
+            'Outline',
         },
     },
     sections = {

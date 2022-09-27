@@ -60,3 +60,9 @@ keymap('t', '<C-k>', '<C-w>k', opts)
 keymap('t', '<C-l>', '<C-w>l', opts)
 -- Split terminal for example: 2<C-t> will open terminal 2
 keymap('t', '<C-t>', ':exe v:count1 . \'ToggleTerm\'<CR>', opts)
+
+-- Resize window
+keymap('n', '<C-Left>', ':vertical resize +2<CR>', opts)
+keymap('n', '<C-Right>', ':vertical resize -2<CR>', opts)
+keymap('n', '<C-Up>', ':resize +2<CR>', opts)
+keymap('n', '<C-Down>', ':resize -2<CR>', opts)
