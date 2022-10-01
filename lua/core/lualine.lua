@@ -7,12 +7,12 @@ local config = {
         section_separators = '',
         theme = {
             normal = {
-                a = { fg = colors.fg, bg = colors.bg },
-                x = { fg = colors.fg, bg = colors.bg },
+                a = { fg = colors.fg, bg = colors.bg_dark },
+                x = { fg = colors.fg, bg = colors.bg_dark },
             },
             inactive = {
-                a = { fg = colors.fg, bg = colors.bg },
-                x = { fg = colors.fg, bg = colors.bg },
+                a = { fg = colors.fg, bg = colors.bg_dark },
+                x = { fg = colors.fg, bg = colors.bg_dark },
             },
         },
         ignore_focus = {
