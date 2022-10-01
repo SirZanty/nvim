@@ -48,6 +48,7 @@ require('core.telescope')
 
 -- Comment
 require('core.comment')
+require('core.ts_context_commentstring')
 
 -- Debug
 require('core.dap')

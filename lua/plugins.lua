@@ -39,6 +39,7 @@ return require('packer').startup({function()
     use 'junegunn/vim-easy-align'
     -- comment
     use 'numToStr/Comment.nvim'
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
     -- debug
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'
