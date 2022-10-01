@@ -72,13 +72,13 @@ require('core.neoscroll')
 require('core.toggleterm')
 
 -- Transparent
-require('core.transparent')
+-- require('core.transparent')
 
 -- Dashboard/Alpha
 require('core.alpha')
 
 -- Ibus
-require('core.ibus')
+-- require('core.ibus')
 
 -- Which-key
 require('core.which-key')

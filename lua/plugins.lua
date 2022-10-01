@@ -56,16 +56,14 @@ return require('packer').startup({function()
     use 'lukas-reineke/indent-blankline.nvim'
     -- Scroll smooth
     use 'karb94/neoscroll.nvim'
-    -- Scroll bar
-    use 'petertriho/nvim-scrollbar'
     -- Terminal
     use 'akinsho/toggleterm.nvim'
     -- Transparent
-    use 'xiyaowong/nvim-transparent'
+    -- use 'xiyaowong/nvim-transparent'
     -- Dashboard/Alpha
     use 'goolord/alpha-nvim'
     -- Ibus
-    use 'phamhiep2506/ibus.nvim'
+    -- use 'phamhiep2506/ibus.nvim'
     -- which-key
     use 'folke/which-key.nvim'
 
