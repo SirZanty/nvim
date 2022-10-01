@@ -13,12 +13,12 @@ return require('packer').startup({function()
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-nvim-lsp-signature-help'
     -- kinds
     use 'onsails/lspkind.nvim'
     -- snippet
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
+    use 'rafamadriz/friendly-snippets'
     -- highline code
     use 'nvim-treesitter/nvim-treesitter'
     -- git line
@@ -58,8 +58,6 @@ return require('packer').startup({function()
     use 'karb94/neoscroll.nvim'
     -- Scroll bar
     use 'petertriho/nvim-scrollbar'
-    -- Format code
-    use 'sbdchd/neoformat'
     -- Terminal
     use 'akinsho/toggleterm.nvim'
     -- Transparent

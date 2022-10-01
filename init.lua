@@ -68,9 +68,6 @@ require('core.indent')
 -- Scroll smooth
 require('core.neoscroll')
 
--- Formatting
-require('core.neoformat')
-
 -- Toggle terminal
 require('core.toggleterm')
 
