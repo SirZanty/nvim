@@ -68,9 +68,6 @@ require('core.indent')
 -- Scroll smooth
 require('core.neoscroll')
 
--- Scroll bar
-require('core.scrollbar')
-
 -- Formatting
 require('core.neoformat')
 
