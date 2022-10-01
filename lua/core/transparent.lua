@@ -1,3 +1,4 @@
+--[[
 require('transparent').setup({
     enable = true,
     extra_groups = {
@@ -15,3 +16,13 @@ require('transparent').setup({
         'WhichKeyBorder',
     }
 })
+--]]
+
+vim.cmd[[
+    highlight TelescopeNormal guibg=NONE ctermbg=NONE
+    highlight TelescopeBorder guibg=NONE ctermbg=NONE
+    highlight NormalFloat guibg=NONE ctermbg=NONE
+    highlight FloatBorder guibg=NONE ctermbg=NONE
+    highlight WhichKeyNormal guibg=NONE ctermbg=NONE
+    highlight WhichKeyFloat guibg=NONE ctermbg=NONE
+]]

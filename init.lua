@@ -73,7 +73,7 @@ require('core.neoscroll')
 require('core.toggleterm')
 
 -- Transparent
--- require('core.transparent')
+require('core.transparent')
 
 -- Dashboard/Alpha
 require('core.alpha')
