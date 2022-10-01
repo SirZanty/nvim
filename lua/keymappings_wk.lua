@@ -107,9 +107,7 @@ wk.register({
     t = {
         name = 'Terminal',
         f = { ':ToggleTerm direction=float<CR>', 'Open Terminal Float' },
-        h = { ':ToggleTerm direction=horizontal<CR>', 'Open Terminal Horizontal' },
-        v = { ':ToggleTerm direction=vertical<CR>', 'Open Terminal Vertical' },
-        t = { ':ToggleTerm direction=tab<CR>', 'Open Terminal Tab' },
+        b = { ':ToggleTerm direction=horizontal<CR>', 'Open Terminal Bottom' },
     },
 
     -- Debug
