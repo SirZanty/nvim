@@ -67,6 +67,8 @@ return require('packer').startup({function()
     -- use 'phamhiep2506/ibus.nvim'
     -- which-key
     use 'folke/which-key.nvim'
+    -- Automatically highlighting
+    use 'RRethy/vim-illuminate'
 
   if packer_bootstrap then
     require('packer').sync()

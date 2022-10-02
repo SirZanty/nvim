@@ -78,6 +78,9 @@ require('core.transparent')
 -- Dashboard/Alpha
 require('core.alpha')
 
+-- Automatically highlighting
+require('core.illuminate')
+
 -- Ibus
 -- require('core.ibus')
 
