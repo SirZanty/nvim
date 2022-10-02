@@ -81,6 +81,9 @@ require('core.alpha')
 -- Automatically highlighting
 require('core.illuminate')
 
+-- Format
+require('core.formatter')
+
 -- Ibus
 -- require('core.ibus')
 

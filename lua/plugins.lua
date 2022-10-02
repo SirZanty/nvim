@@ -1,4 +1,6 @@
 return require('packer').startup({function()
+    -- Plugin manager
+    use 'wbthomason/packer.nvim'
     -- theme
     use 'folke/tokyonight.nvim'
     -- lsp
@@ -59,6 +61,8 @@ return require('packer').startup({function()
     use 'karb94/neoscroll.nvim'
     -- Terminal
     use 'akinsho/toggleterm.nvim'
+    -- Format
+    use 'mhartington/formatter.nvim'
     -- Transparent
     -- use 'xiyaowong/nvim-transparent'
     -- Dashboard/Alpha
