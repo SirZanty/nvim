@@ -45,6 +45,7 @@ return require('packer').startup({function()
     -- debug
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'
+    use 'ravenxrz/DAPInstall.nvim'
     -- hex color
     use 'norcalli/nvim-colorizer.lua'
     --  EasyMotion
