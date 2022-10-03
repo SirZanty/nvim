@@ -82,3 +82,8 @@ vim.cmd[[
     autocmd Filetype dapui_* setlocal nocursorline
     autocmd Filetype dap-repl setlocal nocursorline
 ]]
+
+-- Syntax cshtml
+vim.cmd[[
+    autocmd BufNewFile,BufRead *.cshtml set syntax=html
+]]
