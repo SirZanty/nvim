@@ -22,7 +22,10 @@ return require('packer').startup({function()
     use 'saadparwaiz1/cmp_luasnip'
     use 'rafamadriz/friendly-snippets'
     -- highline code
-    use 'nvim-treesitter/nvim-treesitter'
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
     -- git line
     use 'lewis6991/gitsigns.nvim'
     -- icon
@@ -77,7 +80,6 @@ return require('packer').startup({function()
     -- Improve startup time for Neovim
     use 'lewis6991/impatient.nvim'
     require('impatient').enable_profile()
-    require('impatient')
 
   if packer_bootstrap then
     require('packer').sync()
