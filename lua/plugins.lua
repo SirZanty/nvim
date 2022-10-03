@@ -73,6 +73,10 @@ return require('packer').startup({function()
     use 'folke/which-key.nvim'
     -- Automatically highlighting
     use 'RRethy/vim-illuminate'
+    -- Improve startup time for Neovim
+    use 'lewis6991/impatient.nvim'
+    require('impatient').enable_profile()
+    require('impatient')
 
   if packer_bootstrap then
     require('packer').sync()
