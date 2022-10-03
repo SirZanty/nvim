@@ -45,6 +45,7 @@ return require('packer').startup({function()
     -- comment
     use 'numToStr/Comment.nvim'
     use 'JoosepAlviste/nvim-ts-context-commentstring'
+    use 'windwp/nvim-ts-autotag'
     -- debug
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'

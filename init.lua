@@ -49,6 +49,7 @@ require('core.telescope')
 -- Comment
 require('core.comment')
 require('core.ts_context_commentstring')
+require('core.ts_autotag')
 
 -- Debug
 require('core.dap')
