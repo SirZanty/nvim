@@ -85,6 +85,9 @@ require('core.illuminate')
 -- Format
 require('core.formatter')
 
+-- Cache
+require('impatient').enable_profile()
+
 -- Ibus
 -- require('core.ibus')
 
