@@ -32,7 +32,7 @@ require('packer').startup({
         -- icon
         use 'kyazdani42/nvim-web-devicons'
         -- explorer
-        use 'kyazdani42/nvim-tree.lua'
+        use 'nvim-tree/nvim-tree.lua'
         -- file line
         use 'akinsho/bufferline.nvim'
         -- status line
