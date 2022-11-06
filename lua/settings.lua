@@ -13,14 +13,20 @@ vim.cmd[[
 ]]
 
 -- Folding
-vim.opt.foldmethod = 'manual'
-vim.cmd[[
-    augroup folds
-        autocmd!
-        autocmd BufWinLeave ?* mkview
-        autocmd BufWinEnter ?* silent! loadview
-    augroup END
-]]
+-- vim.opt.foldmethod = 'manual'
+-- vim.cmd[[
+--     augroup folds
+--         autocmd!
+--         autocmd BufWinLeave ?* mkview
+--         autocmd BufWinEnter ?* silent! loadview
+--     augroup END
+-- ]]
+local vim = vim
+local opt = vim.opt
+
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+
 
 -- Set mapping leader
 vim.g.mapleader = ' '
@@ -73,7 +79,7 @@ vim.cmd[[
 vim.opt.termguicolors = true
 
 -- set background
-vim.opt.background = 'dark'
+-- vim.opt.background = 'light'
 
 -- Disable cursorline
 vim.cmd[[

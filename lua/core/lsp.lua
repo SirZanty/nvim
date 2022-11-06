@@ -81,13 +81,17 @@ end
 
 -- List server
 local servers = {
+    'angularls',
+    'astro',
     'tsserver',
     'eslint',
     'tailwindcss',
     'html',
+    'bashls',
     'cssls',
     'emmet_ls',
     'jsonls',
+    'sumneko_lua',
     'clangd'
 }
 

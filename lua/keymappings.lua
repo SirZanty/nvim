@@ -53,7 +53,7 @@ keymap('n', '<F11>', ':lua require\'dap\'.step_into()<CR>', opts)
 keymap('n', '<F12>', ':lua require\'dap\'.step_out()<CR>', opts)
 
 -- Toggle Terminal
-keymap('t', '<C-\\>', '<C-\\><C-n>', opts)
+keymap('t', '<esc>', '<C-\\><C-n>', opts)
 keymap('t', '<C-h>', '<C-w>h', opts)
 keymap('t', '<C-j>', '<C-w>j', opts)
 keymap('t', '<C-k>', '<C-w>k', opts)

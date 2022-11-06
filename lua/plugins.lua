@@ -71,6 +71,7 @@ require('packer').startup({
         use 'mhartington/formatter.nvim'
         -- Transparent
         -- use 'xiyaowong/nvim-transparent'
+        -- use 'tribela/vim-transparent'
         -- Dashboard/Alpha
         use 'goolord/alpha-nvim'
         -- Ibus
@@ -81,6 +82,18 @@ require('packer').startup({
         use 'RRethy/vim-illuminate'
         -- Improve startup time for Neovim
         use 'lewis6991/impatient.nvim'
+        -- Folding
+        use{ 'anuvyklack/pretty-fold.nvim',
+            config = function()
+                require('pretty-fold').setup()
+            end
+        }
+        use { 'anuvyklack/fold-preview.nvim',
+            requires = 'anuvyklack/keymap-amend.nvim',
+            config = function()
+                require('fold-preview').setup()
+            end
+        }
 
       if packer_bootstrap then
         require('packer').sync()
