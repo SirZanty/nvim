@@ -90,9 +90,7 @@ local servers = {
     'bashls',
     'cssls',
     'emmet_ls',
-    'jsonls',
-    'sumneko_lua',
-    'clangd'
+    'jsonls'
 }
 
 -- Start config lsp server
@@ -103,16 +101,6 @@ for _, lsp in ipairs(servers) do
         flags = lsp_flags,
     }
 end
-
--- Fix omnisharp `textDocument/definition`
-require('lspconfig')['omnisharp'].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    flags = lsp_flags,
-    handlers = {
-        ['textDocument/definition'] = require('omnisharp_extended').handler,
-    }
-}
 
 -- Customizing how diagnostics are displayed
 vim.diagnostic.config({
