@@ -1,12 +1,14 @@
 require('nvim-lsp-installer').setup {
     ensure_installed = {
-        'omnisharp',
-        'cssls',
-        'html',
-        'emmet_ls',
-        'jsonls',
+        'angularls',
+        'astro',
         'tsserver',
         'eslint',
-        'tailwindcss'
+        'tailwindcss',
+        'html',
+        'bashls',
+        'cssls',
+        'emmet_ls',
+        'jsonls'
     },
 }

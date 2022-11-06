@@ -47,10 +47,6 @@ require('packer').startup({
         use 'numToStr/Comment.nvim'
         use 'JoosepAlviste/nvim-ts-context-commentstring'
         use 'windwp/nvim-ts-autotag'
-        -- debug
-        use 'mfussenegger/nvim-dap'
-        use 'rcarriga/nvim-dap-ui'
-        use 'ravenxrz/DAPInstall.nvim'
         -- hex color
         use 'norcalli/nvim-colorizer.lua'
         --  EasyMotion
